@@ -6,14 +6,6 @@
     "claimed": "blue",
     "unclaimed": "noonewouldeverusethis7"
   },
-  "3dnews": {
-    "error_msg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
-    "error_type": "message",
-    "url": "http://forum.3dnews.ru/member.php?username={}",
-    "url_main": "http://forum.3dnews.ru/",
-    "claimed": "red",
-    "unclaimed": "noonewouldeverusethis7"
-  },
   "7Cups": {
     "error_type": "status_code",
     "url": "https://www.7cups.com/@{}",
@@ -1050,18 +1042,18 @@
     "unclaimed": "noonewouldeverusethis"
   },
   "Imgur": {
-    "error_type": "status_code",
+    "error_msg": "<div class=\"Page404\">",
+    "error_type": "message",
     "url": "https://imgur.com/user/{}",
     "url_main": "https://imgur.com/",
-    "urlProbe": "https://api.imgur.com/account/v1/accounts/{}?client_id=546c25a59c58ad7",
     "claimed": "blue",
     "unclaimed": "noonewouldeverusethis7"
   },
   "Instagram": {
-    "error_msg": "meta\":{\"title\":null,",
+    "error_msg": "meta\":{\"title\":null",
     "error_type": "message",
-    "url": "https://www.instagram.com/{}",
-    "url_main": "https://www.instagram.com/",
+    "url": "https://instagram.com/{}",
+    "url_main": "https://instagram.com/",
     "claimed": "blue",
     "unclaimed": "noonewouldeverusethis7"
   },
@@ -1289,10 +1281,10 @@
     "unclaimed": "noonewouldeverusethis7"
   },
   "MixCloud": {
-    "error_type": "status_code",
+    "error_type": "message",
+    "error_msg": "<div class=\"error-message-wrapper\">",
     "url": "https://www.mixcloud.com/{}/",
     "url_main": "https://www.mixcloud.com/",
-    "urlProbe": "https://api.mixcloud.com/{}/",
     "claimed": "jenny",
     "unclaimed": "noonewouldeverusethis7"
   },
@@ -1948,9 +1940,8 @@
     "unclaimed": "noonewouldeverusethis7"
   },
   "Telegram": {
-    "error_msg": "<i class=\"tgme_icon_user\"></i>",
+    "error_msg": "tgme_icon_user",
     "error_type": "message",
-    "regexCheck": "^[a-zA-Z0-9_]{5,32}$",
     "url": "https://t.me/{}",
     "url_main": "https://t.me/",
     "claimed": "roopeshvs",
@@ -1986,10 +1977,7 @@
     "unclaimed": "noonewouldeverusethis7"
   },
   "Tinder": {
-    "error_msg": [
-      "<title data-react-helmet=\"true\">Tinder | Dating, Make Friends &amp; Meet New People</title>",
-      "<title data-react-helmet=\"true\">Tinder | Match. Chat. Date.</title>"
-    ],
+    "error_msg": "Log in",
     "error_type": "message",
     "url": "https://www.tinder.com/@{}",
     "url_main": "https://tinder.com/",
@@ -2038,7 +2026,8 @@
     "unclaimed": "noonewouldeverusethis7"
   },
   "Twitch": {
-    "error_type": "status_code",
+    "error_type": "message",
+    "error_msg": "data-a-target=\"core-error-message",
     "url": "https://www.twitch.tv/{}",
     "url_main": "https://www.twitch.tv/",
     "urlProbe": "https://m.twitch.tv/{}",

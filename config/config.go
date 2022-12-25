@@ -2,14 +2,15 @@ package config
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"strings"
 )
 
 type WebSite struct {
-	ErrorMsg  string            `json:"error_message,omitempty"`
-	ErrorCode int               `json:"error_code,omitempty"`
 	ErrorType string            `json:"error_type"`
+	ErrorCode int               `json:"error_code,omitempty"`
+	ErrorMsg  interface{}       `json:"error_msg,omitempty"`
 	Headers   map[string]string `json:"headers,omitempty"`
 	URL       string            `json:"url"`
 	URLMain   string            `json:"url_main"`
@@ -31,8 +32,11 @@ func ParseSites(web *WebSites) error {
 	return nil
 }
 func (web *WebSite) PutUserToURL(user string) {
-	s := strings.ReplaceAll(web.URL, "{}", user)
-	web.URL = s
+	if fmt.Sprintf("%v", web.ErrorMsg) == "" {
+		fmt.Println(web.URLMain)
+	}
+	web.URL = strings.ReplaceAll(web.URL, "{}", user)
+
 	if web.URLProbe != "" {
 		web.URLProbe = strings.ReplaceAll(web.URLProbe, "{}", user)
 	}

@@ -8,11 +8,14 @@ import (
 	"sync"
 	"time"
 
-	"sherlock/config"
+	"go-sherlock/config"
 )
 
 func Worker(site config.WebSites, username string, work *sync.WaitGroup) {
 	for _, c := range site {
+		// if strings.Contains(c.URL, "instagram") {
+		// 	fmt.Println(c)
+		// }
 		go tester(c, username, work)
 	}
 }
@@ -61,7 +64,7 @@ func Status(web config.WebSite, resp *http.Response) bool {
 func ErrorMsg(web config.WebSite, resp *http.Response) bool {
 	body, _ := io.ReadAll(resp.Body)
 	html := string(body)
-	if strings.Contains(html, web.ErrorMsg) {
+	if strings.Contains(html, fmt.Sprintf("%v", web.ErrorMsg)) {
 		return false
 	} else {
 		return true

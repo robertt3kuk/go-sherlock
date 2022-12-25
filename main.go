@@ -22,8 +22,9 @@ func main() {
 	}
 	var work sync.WaitGroup
 	for _, username := range usernames {
+		fmt.Println("[]started searching links for username: " + username)
 		work.Add(len(WebS))
-		go pkg.Worker(WebS, username, &work)
+		pkg.Worker(WebS, username, &work)
+		work.Wait()
 	}
-	work.Wait()
 }
