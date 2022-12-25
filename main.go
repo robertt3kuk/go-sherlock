@@ -6,8 +6,8 @@ import (
 	"os"
 	"sync"
 
-	"go-sherlock/config"
-	"go-sherlock/pkg"
+	"github.com/robertt3kuk/go-sherlock/config"
+	"github.com/robertt3kuk/go-sherlock/pkg"
 )
 
 func main() {
