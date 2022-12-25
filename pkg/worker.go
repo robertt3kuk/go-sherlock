@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"go-sherlock/config"
+	"github.com/robertt3kuk/go-sherlock/config"
 )
 
 func Worker(site config.WebSites, username string, work *sync.WaitGroup) {
@@ -45,12 +45,12 @@ func tester(web config.WebSite, username string, work *sync.WaitGroup) {
 		printer(web, username)
 	}
 	work.Done()
-
 }
 
 func printer(web config.WebSite, username string) {
 	fmt.Println(username + " >>>>>>    " + web.URL)
 }
+
 func Status(web config.WebSite, resp *http.Response) bool {
 	switch resp.StatusCode {
 	case web.ErrorCode:
@@ -59,8 +59,8 @@ func Status(web config.WebSite, resp *http.Response) bool {
 		return true
 	}
 	return false
-
 }
+
 func ErrorMsg(web config.WebSite, resp *http.Response) bool {
 	body, _ := io.ReadAll(resp.Body)
 	html := string(body)
@@ -69,5 +69,4 @@ func ErrorMsg(web config.WebSite, resp *http.Response) bool {
 	} else {
 		return true
 	}
-
 }
